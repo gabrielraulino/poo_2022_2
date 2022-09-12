@@ -1,0 +1,28 @@
+{
+  // Use o IntelliSense para saber mais sobre os atributos possíveis.
+  // Focalizar para exibir as descrições dos atributos existentes.
+  // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch Manual",
+      "request": "launch",
+      "mainClass": "Manual",
+      "projectName": "Tamagotchi_1d9c6de3"
+    },
+    {
+      "type": "java",
+      "name": "Launch Solver",
+      "request": "launch",
+      "mainClass": "Solver",
+      "projectName": "Tamagotchi_1d9c6de3"
+    }
+  ]
+}
