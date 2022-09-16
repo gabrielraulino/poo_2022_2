@@ -2,44 +2,83 @@ import java.util.Scanner;
 import java.util.Locale;
 
 class Jogo {
-  private static int index = 0;
+
   private int numJogadores;
-  private int[] armadilha;
-  private int[] posicao;
-  private boolean[] podeJogar;
-  private int numArmadilha = 0;
   private int numCasas;
-  private int prox;
-  private boolean fimDoJogo = false;
+  private int[] posJogador;
+  private int proximoJogador;
+  private int[] armadilhas;
+  private boolean[] podeJogar;
+  private int qtdArmadilhas = 0;
+  private boolean fimJogo = false;
 
   public Jogo(int numJogadores, int numCasas) {
     this.numJogadores = numJogadores;
     this.numCasas = numCasas;
-    posicao = new int[numJogadores];
-    for (int i = 0; i < posicao.length; i++) {
-      posicao[i] = 0;
+    posJogador = new int[numJogadores];
+    podeJogar = new boolean[numJogadores];
+    for (int i = 0; i < numJogadores; i++) {
+      posJogador[i] = 0;
+      podeJogar[i] = true;
     }
-    numArmadilha = 3;
-    armadilha = new int[numArmadilha];
+    proximoJogador = 0;
+    armadilhas = new int[3];
+
   }
 
   public void addArmadilha(int t) {
-    armadilha[index] = t;
-    index++;
+    if (qtdArmadilhas < 3) {
+      armadilhas[qtdArmadilhas] = t;
+      qtdArmadilhas++;
+    }
   }
 
   public void addMove(int d1, int d2) {
+    if (fimJogo) {
+      System.out.println("O jogo acabou");
+      return;
+    }
+    if (podeJogar[proximoJogador] == false) {
+      System.out.printf
+      ("O jogador %d passa a vez\n",
+      proximoJogador + 1);
+      podeJogar[proximoJogador] = true;
+      proximoJogador = (proximoJogador + 1) % numJogadores;
+
+    }
+    posJogador[proximoJogador] += d1 + d2;
+    System.out.printf
+    ("O jogador %d vai para a casa %d\n", 
+    proximoJogador + 1, 
+    posJogador[proximoJogador]);
+    if(posJogador[proximoJogador] > numCasas){
+      System.out.printf("O jogador %d venceu o jogo\n", proximoJogador + 1);
+      fimJogo = true;
+      return;
+    }
+    boolean caiu = false;
+    for (int i = 0; i < 3; i++) {
+      if (posJogador[proximoJogador] == armadilhas[i]) {
+        caiu = true;
+        podeJogar[proximoJogador] = false;
+        break;
+      }
+    }
+    if (caiu) {
+      System.out.printf("O jogador %d caiu em um armadilha\n", proximoJogador + 1);
+    }
+    proximoJogador = (proximoJogador + 1) % numJogadores;
 
   }
 
-  public String toString(){
+  public String toString() {
     String retorno = "";
-    for(int i = 0; i < numJogadores; i++){
-      retorno += "PosJogador[" + (i + 1) +"] = " + posicao[i]+"\n";
+    for (int i = 0; i < numJogadores; i++) {
+      retorno += String.format("PosJogador[%d] = %d\n", i + 1, posJogador[i]);
     }
-    
     return retorno;
-    }
+
+  }
 
 }
 

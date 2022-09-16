@@ -1,0 +1,12 @@
+init 2 10
+addArmadilha 2
+addArmadilha 4
+addArmadilha 8
+show
+addMove 1 1
+addMove 3 4
+addMove 1 2
+addMove 6 5
+show
+addMove 3 7
+end

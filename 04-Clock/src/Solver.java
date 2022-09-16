@@ -14,7 +14,9 @@ class Time {
   public void setHour(int hour){
     if(hour > 24 || hour < 0 ){
       System.out.println("fail: hora invalida");
-    }else
+    }else if(hour == 24)
+      this.hour = 0;
+    else  
       this.hour = hour; 
   }
 
