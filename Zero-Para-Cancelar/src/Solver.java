@@ -3,9 +3,12 @@ import java.util.ArrayList;
 import java.util.Locale;
 class ComputaSequencia{
 
-    
+    private ArrayList<Integer> numeros;
+
     public void cadastra(int valor){
-    
+      
+
+
     }
 
     public int computa(){

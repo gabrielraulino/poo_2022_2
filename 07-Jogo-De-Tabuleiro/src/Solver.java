@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Locale;
 
 class Jogo {
@@ -11,7 +12,8 @@ class Jogo {
   private boolean[] podeJogar;
   private int qtdArmadilhas = 0;
   private boolean fimJogo = false;
-
+  private ArrayList<Integer> array = new ArrayList();
+  
   public Jogo(int numJogadores, int numCasas) {
     this.numJogadores = numJogadores;
     this.numCasas = numCasas;
