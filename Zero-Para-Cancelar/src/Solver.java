@@ -20,14 +20,7 @@ class ComputaSequencia{
     }
 
     public String toString(){
-      String toString = "";
-      for (Integer integer : numeros) {
-        if(toString.equals(""))
-          toString += integer;
-        else  
-          toString += ", " + integer;
-      }
-      return "valores = [" + toString + "]";
+      return "valores = " + numeros ;
     }
 }
 
