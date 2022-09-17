@@ -1,29 +1,35 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Locale;
 class ComputaSequencia{
 
-    private ArrayList<Integer> numeros;
+    private ArrayList<Integer> numeros = new ArrayList<>();
 
     public void cadastra(int valor){
-      
-
-
+      if(valor == 0)
+        numeros.remove(numeros.size() - 1);
+      else  
+        numeros.add(valor);
     }
 
     public int computa(){
-    
+      Integer sum = 0;
+      for (Integer integer : numeros) {
+        sum += integer;
+      }
+      return sum;
     }
 
     public String toString(){
-    
+      String toString = "";
+      for (Integer integer : numeros) {
+        if(toString.equals(""))
+          toString += integer;
+        else  
+          toString += ", " + integer;
+      }
+      return "valores = [" + toString + "]";
     }
-
-
-    
 }
-
-
 
 class Solver{
     public static void main(String[] args) {
