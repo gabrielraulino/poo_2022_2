@@ -18,7 +18,8 @@ class ComputaSequencia{
       }
       return sum;
     }
-
+    
+      
     public String toString(){
       return "valores = " + numeros ;
     }
