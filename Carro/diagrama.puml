@@ -1,0 +1,19 @@
+@startuml
+skinparam ClassAttributeIconSize 0
+package com.qxcode {
+  class Car {
+    - gas : int
+    - gasMax : int
+    - km : int
+    - pass : int
+    - passMax : int
+    __
+    + Car()
+    + drive(km : int)
+    + enter()
+    + fuel(gas : int)
+    + leave()
+    + toString() : String
+  }
+}
+@enduml
