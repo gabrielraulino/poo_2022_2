@@ -1,0 +1,17 @@
+@startuml
+skinparam ClassAttributeIconSize 0
+package com.qxcode {
+  class Calculator {
+    - battery : int
+    - batteryMax : int
+    - display : float
+    __
+    + Calculator(batteryMax : int)
+    + chargeBattery(value : int)
+    + division(num : int, den : int)
+    + sum(a : int, b : int)
+    + useBattery() : boolean
+    + toString() : String
+  }
+}
+@enduml
