@@ -53,4 +53,9 @@ public class Retangulo extends Shape
       inside = true;
     return inside;
   }
+
+  @Override
+  public String toString() {
+    return String.format("Retângulo com cantos (%.1f,%.1f) e (%.1f,%.1f)", infEsq.getX(), infEsq.getY(), subDir.getX(), subDir.getY());
+  }
 }

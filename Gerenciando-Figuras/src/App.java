@@ -45,9 +45,14 @@ public class App {
       } else if (ui[0].equals("inside")) {//value value
         double x = Double.parseDouble(ui[1]);
         double y = Double.parseDouble(ui[2]);
-        System.out.println(lista.get(index).inside(new Ponto2D(x, y)));
+        for (Shape shape: lista) {
+          System.out.println(shape.inside(new Ponto2D(x, y)));
+        }
       } else if (ui[0].equals("mostra")) {//value value
-        System.out.println(lista.get(index).toString());
+        System.out.println("Figura:");
+        for (Shape shape:lista) {
+          System.out.println(shape.toString());
+        }
       } else {
         System.out.println("fail: comando invalido");
       }
