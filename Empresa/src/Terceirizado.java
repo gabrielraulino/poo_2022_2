@@ -1,13 +1,6 @@
 public class Terceirizado extends Empregado {
   private Double despesaAdicional;
 
-
-//  public Terceirizado(String nome, Integer horas,
-//      Double valorPorHora, Double despesaAdicional) {
-//
-//  }
-
-
   public Terceirizado(String nome, Integer horas, Double valorPorHora, Double despesaAdicional) {
     super(nome, horas, valorPorHora);
     this.despesaAdicional = despesaAdicional;

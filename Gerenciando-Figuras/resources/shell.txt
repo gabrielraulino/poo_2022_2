@@ -1,0 +1,33 @@
+circulo 2 3 5
+$circulo 2 3 5
+area
+$area
+area total: 78.54
+perimetro
+$perimetro
+perimetro total: 31.42
+inside 1 1
+$inside 1 1
+true
+retangulo 1 1 3 3
+$retangulo 1 1 3 3
+area
+$area
+area total: 82.54
+perimetro
+$perimetro
+perimetro total: 39.42
+inside 2 2
+$inside 2 2
+true
+true
+inside 3 3
+$inside 3 3
+true
+true
+inside 4 4
+$inside 4 4
+true
+false
+end
+$end

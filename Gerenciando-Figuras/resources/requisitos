@@ -1,0 +1,11 @@
+Faça um programa para gerenciar figuras geométricas.
+Para cada figura geométrica, podemos calcular a área,
+o perímetro e checar se uma ponto está dentro ou não da figura
+geométrica.
+
+As figuras geométricas podem ser círculos ou retângulos.
+
+O retângulo é definido por dois pontos: o ponto inferior esquerdo
+e o ponto superior direito.
+
+O círculo pode ser definido pelo ponto do centro e pelo raio.
