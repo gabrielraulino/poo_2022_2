@@ -35,7 +35,7 @@ class Equipe {
 
   @Override
   public String toString() {
-    return String.format("Equipe [nome=%s, totalPontos=%d, totalVitorias=%d, saldoGols=%d, golPro=%d]",
+    return String.format("Equipe [nome=%s, totalPontos=%d, totalVitorias=%d, saldoGols=%d, golsPro=%d]",
                         nome,
                         totalPontos,
                         totalVitorias,
