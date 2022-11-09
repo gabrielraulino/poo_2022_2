@@ -1,0 +1,4 @@
+totalPontos
+maiorVitorias
+maiorSaldoGols
+maiorGolsPro

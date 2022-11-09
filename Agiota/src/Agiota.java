@@ -7,8 +7,10 @@ public class Agiota {
     Map<Integer, Transaction> repTr; 
     
     Agiota(int balance){
-
+        this.balance = balance;
     }
-
+    public void addClient(String codename, int limit){
+      
+    }
     
 }
