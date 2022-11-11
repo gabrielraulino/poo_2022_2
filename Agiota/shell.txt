@@ -1,0 +1,77 @@
+#__case init
+$init 500
+
+#__case cadastrar
+$addCli maria 500
+$addCli josue 60
+$addCli maria 300
+fail: cliente ja existe
+
+#__case emprestar
+$lend maria 300
+$lend josue 50
+$lend maria 100
+
+#__case show
+# Mostra os cliente ordenados por codenome
+# Mostra as operações pela ordem que elas ocorreram
+$show
+clients:
+- josue:50/60
+- maria:400/500
+transactions:
+- id:0 maria:300
+- id:1 josue:50
+- id:2 maria:100
+balance: 50
+
+# __case erros no emprestimo
+$lend bruno 30
+fail: cliente nao existe
+
+$lend maria 60
+fail: fundos insuficientes
+
+$lend josue 30
+fail: limite excedido
+
+$show
+clients:
+- josue:50/60
+- maria:400/500
+transactions:
+- id:0 maria:300
+- id:1 josue:50
+- id:2 maria:100
+balance: 50
+
+#__case receber dinheiro
+$receive maria 1000
+fail: valor maior que a divida
+$receive maria 350
+$receive josue 1
+$receive maria 10
+$show
+clients:
+- josue:49/60
+- maria:40/500
+transactions:
+- id:0 maria:300
+- id:1 josue:50
+- id:2 maria:100
+- id:3 maria:-350
+- id:4 josue:-1
+- id:5 maria:-10
+balance: 411
+
+#__case matar
+$kill maria
+$show
+clients:
+- josue:49/60
+transactions:
+- id:1 josue:50
+- id:4 josue:-1
+balance: 411
+
+$end
